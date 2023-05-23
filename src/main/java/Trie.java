@@ -44,6 +44,7 @@ public class Trie {
                 pCrawl.children[index] = new TrieNode();
 
             pCrawl = pCrawl.children[index];
+            System.out.println();
 
 
 

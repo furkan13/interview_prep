@@ -8,7 +8,7 @@ public class AllAnagram {
 
 
 
-        public List<Integer> findAnagrams(String s, String p) {
+        public static List<Integer> findAnagrams(String s, String p) {
 
 
             if(p.length()>s.length()) return new ArrayList();
