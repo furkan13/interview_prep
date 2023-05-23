@@ -1,64 +1,23 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+//https://leetcode.com/problems/two-sum/submissions/955951206/
 
 public class TwoSum {
-
     class Solution {
         public int[] twoSum(int[] nums, int target) {
-            HashMap <Integer, int []> set =new HashMap<>();
-
-            int value=0;
-            int i=0;
-            int []result=new int[2];
-            ArrayList <Integer> list=new ArrayList<>();
-
-           while ( true)
-
-
-           {
-               if(value<target)
-               {
-                   value=value+nums[i];
-                   list.add(nums[i]);
-                   i++;
-               }
-               else if (value>target)
-               {
-                   value=value-list.get(0);
-                   list.remove(0);
-               }
-               else
-               {
-                   for(int j=0;j<list.size();j++)
-                   {
-                       result[i]=list.get(i);
-
-
-                   }
-                   return result;
-
-               }
-           }
-
-
-
-
-
-
-
-
+            Map<Integer, Integer> map = new HashMap<>();
+            for (int i = 0; i < nums.length; i++) {
+                int complement = target - nums[i];
+                if (map.containsKey(complement)) {
+                    return new int[] { map.get(complement), i };
+                }
+                map.put(nums[i], i);
+            }
+            return new int[] {-1, -1};
         }
-
-
-        public int calculate(int i,int[] nums)
-        {
-
-                return nums[i]+nums[i+1];
-
-        }
-
-
-
     }
+
 }
+
